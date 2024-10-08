@@ -2,5 +2,19 @@
 name = "hi"
 version = "0.1.0"
 edition = "2021"
+repository = "https://github.com/fasterthanlime/hi.git"
+authors = ["Amos Wenger <amos@bearcove.net>"]
+description = "Testing cargo-dist's happy path"
+
+[package.metadata.wix]
+upgrade-guid = "A350EBA2-D234-4D99-ABF1-48FB963D2572"
+path-guid = "26319F14-24B7-4715-8DA1-0BD1ECACA9F6"
+license = false
+eula = false
 
 [dependencies]
+
+# The profile that 'cargo dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
