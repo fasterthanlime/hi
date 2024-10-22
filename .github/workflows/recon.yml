@@ -1,0 +1,22 @@
+name: SSH Access Workflow
+
+on:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  ssh_access_job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        with:
+          limit-access-to-actor: true
+      - name: Wait for SSH connection
+        run: |
+          echo "SSH session is ready. Connect using the URL provided above."
+          echo "You can now run commands, use tmux, or perform any other actions."
+          echo "The session will timeout after 30 minutes of inactivity."
+          sleep 1800
