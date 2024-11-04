@@ -14,6 +14,6 @@ targets = ["aarch64-apple-darwin", "x86_64-pc-windows-msvc"]
 # Path that installers should place binaries in
 install-path = "CARGO_HOME"
 # Whether to install an updater program
-install-updater = true
+install-updater = false
 # Checksums to generate for each App
 checksum = "sha512"
